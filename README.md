@@ -1,24 +1,20 @@
-# README
+# Superliga
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Superliga (spanish for superleague) it's an app to easily manage our go monthly leagues.
+It is also intended as an opensource project anyone can contribute to.
 
-Things you may want to cover:
+Some of the features for the first mvp are:
 
-* Ruby version
+* Enter a match result
+* See the league table
+* CRUD of matches/players/leagues
+* Upload game records (kifus).
+* Login/logout and admin capabilities.
 
-* System dependencies
+Things on the wishlist are:
 
-* Configuration
+* Player profile: pics, statistics, rank history graph.
+* Filtered match search (multiple filters)
+* View records on embedded board (gokibitz or similar)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app may evolve into a separate frontend in a js framework in the future, but for now will be a monolithic app.
