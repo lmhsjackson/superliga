@@ -1,6 +1,6 @@
 # Superliga
 
-Superliga (spanish for superleague) it's an app to easily manage our go monthly leagues.
+Superliga (spanish for superleague) it's an app to easily manage the [AAGO](http://aago.org.ar/)  [Go](https://en.wikipedia.org/wiki/Go_(game)) monthly leagues.
 It is also intended as an opensource project anyone can contribute to.
 
 Some of the features for the first mvp are:
