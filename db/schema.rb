@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_193340) do
+ActiveRecord::Schema.define(version: 2019_03_01_193826) do
+
+  create_table "leagues", force: :cascade do |t|
+    t.string "name"
+    t.string "edition"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_leagues_on_player_id"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
