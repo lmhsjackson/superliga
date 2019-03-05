@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_201258) do
+ActiveRecord::Schema.define(version: 2019_03_01_223615) do
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2019_03_01_201258) do
     t.integer "league_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "black_player_id"
+    t.integer "white_player_id"
     t.index ["league_id"], name: "index_matches_on_league_id"
     t.index ["location_id"], name: "index_matches_on_location_id"
   end
