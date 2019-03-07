@@ -1,4 +1,3 @@
 class League < ApplicationRecord
-  belongs_to :player
-  alias_attribute :director, :player
+  belongs_to :director, class_name: 'Player'
 end
