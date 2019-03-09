@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @player.name
+p
+  strong Email:
+  = @player.email
+p
+  strong Rango:
+  = @player.rango
+
+=> link_to 'Edit', edit_player_path(@player)
+'|
+=< link_to 'Back', players_path
