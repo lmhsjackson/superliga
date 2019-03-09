@@ -5,6 +5,8 @@ class Match < ApplicationRecord
   belongs_to :white_player, class_name: 'Player'
   validate :not_playing_oneself
 
+  VICTORY_CONDITIONS = [:resignation, :time, :points]
+
   def not_playing_oneself
     errors.add(:white_player_id, 'Is the same as black player') unless black_player != white_player
   end

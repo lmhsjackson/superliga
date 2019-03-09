@@ -36,9 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Semantic forms with easy association setup.
 gem 'formtastic', '~> 3.0'
 
+# replaces erb template engine 
 gem 'slim-rails'
+
+# Simple css to get started
+gem 'skins'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,16 @@
+.spaced_form {
+  ol, ul {
+       list-style: none;
+     }
+  label {
+    // width:180px;
+    clear:left;
+    // float:right;
+    text-align:left;
+    padding-right:10px;
+  }
+
+  input, label {
+    float:left;
+  }
+}

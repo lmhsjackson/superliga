@@ -9,8 +9,6 @@ table
       th Victory condition
       th Location
       th League
-      th Created at
-      th Updated at
       th Black player
       th White player
       th
@@ -24,12 +22,10 @@ table
         td = match.handicap
         td = match.winner
         td = match.victory_condition
-        td = match.location_id
-        td = match.league_id
-        td = match.created_at
-        td = match.updated_at
-        td = match.black_player_id
-        td = match.white_player_id
+        td = match.location.name
+        td = "#{match.league.edition}° #{match.league.name}"
+        td = match.black_player.name
+        td = match.white_player.name
         td = link_to 'Show', match
         td = link_to 'Edit', edit_match_path(match)
         td = link_to 'Destroy', match, data: { confirm: 'Are you sure?' }, method: :delete

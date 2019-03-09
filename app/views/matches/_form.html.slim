@@ -1,15 +1,13 @@
-= semantic_form_for @match do |f|
+= semantic_form_for @match, :html => { :class => 'spaced_form' } do |f|
   = f.inputs do
+    = f.input :league
     = f.input :black_player
     = f.input :white_player
     = f.input :winner, as: :select, collection: [ 'black', 'white' ]
-    = f.input :victory_condition
+    = f.input :victory_condition, as: :select, collection: Match::VICTORY_CONDITIONS
     = f.input :location
-    = f.input :kifu
+    /= f.input :kifu
     = f.input :handicap
-    / a match belongs to a league
-    / we sould set this automatically
-    = f.input :league
 
   = f.actions do
     = f.action :submit, as: :input
