@@ -1,0 +1,29 @@
+h1 Listing leagues
+
+table
+  thead
+    tr
+      th Name
+      th Edition
+      th Start date
+      th End date
+      th Director
+      th
+      th
+      th
+
+  tbody
+    - @leagues.each do |league|
+      tr
+        td = league.name
+        td = league.edition
+        td = league.start_date
+        td = league.end_date
+        td = league.director_id
+        td = link_to 'Show', league
+        td = link_to 'Edit', edit_league_path(league)
+        td = link_to 'Destroy', league, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New League', new_league_path

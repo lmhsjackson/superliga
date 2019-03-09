@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @league.name
+p
+  strong Edition:
+  = @league.edition
+p
+  strong Start date:
+  = @league.start_date
+p
+  strong End date:
+  = @league.end_date
+p
+  strong Director:
+  = @league.director.name
+
+=> link_to 'Edit', edit_league_path(@league)
+'|
+=< link_to 'Back', leagues_path
