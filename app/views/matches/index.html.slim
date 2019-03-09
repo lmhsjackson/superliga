@@ -1,0 +1,39 @@
+h1 Listing matches
+
+table
+  thead
+    tr
+      th Kifu
+      th Handicap
+      th Winner
+      th Victory condition
+      th Location
+      th League
+      th Created at
+      th Updated at
+      th Black player
+      th White player
+      th
+      th
+      th
+
+  tbody
+    - @matches.each do |match|
+      tr
+        td = match.kifu
+        td = match.handicap
+        td = match.winner
+        td = match.victory_condition
+        td = match.location_id
+        td = match.league_id
+        td = match.created_at
+        td = match.updated_at
+        td = match.black_player_id
+        td = match.white_player_id
+        td = link_to 'Show', match
+        td = link_to 'Edit', edit_match_path(match)
+        td = link_to 'Destroy', match, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Match', new_match_path

@@ -1,0 +1,36 @@
+p#notice = notice
+
+p
+  strong Kifu:
+  = @match.kifu
+p
+  strong Handicap:
+  = @match.handicap
+p
+  strong Winner:
+  = @match.winner
+p
+  strong Victory condition:
+  = @match.victory_condition
+p
+  strong Location:
+  = @match.location_id
+p
+  strong League:
+  = @match.league_id
+p
+  strong Created at:
+  = @match.created_at
+p
+  strong Updated at:
+  = @match.updated_at
+p
+  strong Black player:
+  = @match.black_player_id
+p
+  strong White player:
+  = @match.white_player_id
+
+=> link_to 'Edit', edit_match_path(@match)
+'|
+=< link_to 'Back', matches_path
