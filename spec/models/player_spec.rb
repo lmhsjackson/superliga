@@ -21,4 +21,9 @@ RSpec.describe Player, type: :model do
     subject.email = 'notAmail.com'
     expect(subject).not_to be_valid
   end
+
+  it 'is not valid without a correct rango' do
+    subject.rango = '14D'
+    expect(subject).not_to be_valid
+  end
 end
