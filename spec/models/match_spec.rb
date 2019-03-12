@@ -32,4 +32,9 @@ RSpec.describe Match, type: :model do
     subject.black_player = subject.white_player
     expect(subject).not_to be_valid
   end
+
+  it 'is not valid with weird victory condition' do
+    subject.victory_condition = 'This is not valid'
+    expect(subject).not_to be_valid
+  end
 end
