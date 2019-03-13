@@ -26,4 +26,5 @@ test:
 production:
   <<: *default
   database: superliga_production
-  password: <%= ENV.fetch("DB_PROD_PASSWORD") %>
+  # password: <%= ENV.fetch("DB_PROD_PASSWORD") %>
+  password: password
