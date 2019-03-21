@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   # GET /matches
   # GET /matches.json
@@ -25,40 +26,23 @@ class MatchesController < ApplicationController
   # POST /matches.json
   def create
     @match = Match.new(match_params)
+    flash[:notice] = "Match was created successfully." if @match.save
+    respond_with @match
 
-    respond_to do |format|
-      if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
-        format.json { render :show, status: :created, location: @match }
-      else
-        format.html { render :new }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /matches/1
   # PATCH/PUT /matches/1.json
   def update
-    respond_to do |format|
-      if @match.update(match_params)
-        format.html { redirect_to @match, notice: 'Match was successfully updated.' }
-        format.json { render :show, status: :ok, location: @match }
-      else
-        format.html { render :edit }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = "Match was created successfully." if @match.update(match_params)
+    respond_with(@match)
   end
 
   # DELETE /matches/1
   # DELETE /matches/1.json
   def destroy
     @match.destroy
-    respond_to do |format|
-      format.html { redirect_to matches_url, notice: 'Match was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with @match
   end
 
   private
