@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe LeaguesController, type: :controller do
 
-  # This should return the minimal set of attributes required to create a valid
-  # League. As you add validations to League, be sure to
-  # adjust the attributes here as well.
-
   let(:director) { create :player }
   let(:valid_attributes) {
     {'name'=>'Otra', 'edition'=>'123', 'start_date(1i)'=>'2014',
@@ -19,9 +15,6 @@ RSpec.describe LeaguesController, type: :controller do
      'end_date(2i)'=>'3', 'end_date(3i)'=>'16', 'director_id'=> nil}
   }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # LeaguesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe 'GET #index' do
