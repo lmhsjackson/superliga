@@ -48,8 +48,8 @@ gem 'slim-rails'
 # Simple css to get started
 gem 'skins'
 
-# gem 'simplecov', require: false, group: :test
-# gem 'simplecov-rcov', require: false, group: :test
+gem 'simplecov', require: false, group: :test
+gem 'simplecov-rcov', require: false, group: :test
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
