@@ -35,6 +35,7 @@ gem 'responders'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'travis'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -46,6 +47,9 @@ gem 'slim-rails'
 
 # Simple css to get started
 gem 'skins'
+
+# gem 'simplecov', require: false, group: :test
+# gem 'simplecov-rcov', require: false, group: :test
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
