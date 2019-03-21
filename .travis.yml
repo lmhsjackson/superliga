@@ -1,0 +1,32 @@
+env:
+  global:
+    - DB=pgsql
+    - CC_TEST_REPORTER_ID=69b5b69bbdace10a585ac36e42f58335abcb4de99ba98fca748c5e6da1fe17ad
+
+services:
+  - postgresql
+
+before_install:
+  - gem update --system
+  - gem install bundler
+
+language: ruby
+
+rvm:
+  - 2.6.1
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database superliga_test;' -U postgres
+
+  - bundle exec rake db:create db:migrate
+
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - bundle exec rspec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
