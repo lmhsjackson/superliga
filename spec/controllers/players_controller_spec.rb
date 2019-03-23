@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe PlayersController, type: :controller do
 
   let(:valid_attributes) {
-    {'name'=>'pipo', 'email'=>'pipi@pipo.com', 'rango'=>'5K'}
+    {'first_name'=>'pipo', 'last_name' => 'chipolatti', 'email'=>'pipi@pipo.com', 'rango'=>'5K'}
   }
 
   let(:invalid_attributes) {
-    {'name'=>'pipo', 'email'=>'NOTaMAIL', 'rango'=>'5K'}
+    {'first_name'=>'pipo', 'email'=>'NOTaMAIL', 'rango'=>'5K'}
   }
 
   let(:valid_session) { {} }
@@ -67,16 +67,16 @@ RSpec.describe PlayersController, type: :controller do
 
   describe 'PUT #update' do
     context 'with valid params' do
-      let(:new_name) { 'new_' + valid_attributes['name'] }
+      let(:new_name) { 'new_' + valid_attributes['first_name'] }
       let(:new_attributes) {
-        valid_attributes.merge('name' => new_name)
+        valid_attributes.merge('first_name' => new_name)
       }
 
       it 'updates the requested player' do
         player = Player.create! valid_attributes
         put :update, params: {id: player.to_param, player: new_attributes}, session: valid_session
         player.reload
-        expect(player.name).to eq(new_name)
+        expect(player.first_name).to eq(new_name)
       end
 
       it 'redirects to the player' do
