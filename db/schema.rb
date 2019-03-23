@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_195816) do
+ActiveRecord::Schema.define(version: 2019_03_23_214234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2019_03_23_195816) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "match_participations", force: :cascade do |t|
+    t.bigint "participant_id"
+    t.bigint "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_match_participations_on_match_id"
+    t.index ["participant_id"], name: "index_match_participations_on_participant_id"
+  end
+
   create_table "matches", force: :cascade do |t|
     t.string "kifu"
     t.integer "handicap"
@@ -50,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_03_23_195816) do
   create_table "participants", force: :cascade do |t|
     t.string "rank"
     t.string "first_name"
-    t.integer "last_name"
+    t.string "last_name"
     t.integer "score"
     t.bigint "player_id"
     t.bigint "league_id"
@@ -61,13 +70,16 @@ ActiveRecord::Schema.define(version: 2019_03_23_195816) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "email"
     t.string "rango"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name"
   end
 
+  add_foreign_key "match_participations", "matches"
+  add_foreign_key "match_participations", "participants"
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "locations"
   add_foreign_key "participants", "leagues"
