@@ -15,6 +15,7 @@ class Match < ApplicationRecord
   private
 
   def two_different_oponents
-    participants.uniq.count == 2
+    return if participants.uniq.count == 2
+    errors.add(:participants, 'need two different participants')
   end
 end
