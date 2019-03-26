@@ -5,8 +5,4 @@ class League < ApplicationRecord
   validates :name, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-
-  def register_participant(player, rank = nil)
-    Participant.new_from(player, rank)
-  end
 end
