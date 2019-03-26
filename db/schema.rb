@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_214234) do
+ActiveRecord::Schema.define(version: 2019_03_26_193053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 2019_03_23_214234) do
     t.bigint "league_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "black_player_id"
-    t.integer "white_player_id"
     t.index ["league_id"], name: "index_matches_on_league_id"
     t.index ["location_id"], name: "index_matches_on_location_id"
   end
@@ -60,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_23_214234) do
     t.string "rank"
     t.string "first_name"
     t.string "last_name"
-    t.integer "score"
+    t.integer "score", default: 0
     t.bigint "player_id"
     t.bigint "league_id"
     t.datetime "created_at", null: false
