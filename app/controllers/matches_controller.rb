@@ -1,9 +1,5 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :json
-
-  # GET /matches
-  # GET /matches.json
   def index
     @matches = Match.all
   end
@@ -16,6 +12,8 @@ class MatchesController < ApplicationController
   # GET /matches/new
   def new
     @match = Match.new
+    @match.match_participations.build color: 'black'
+    @match.match_participations.build color: 'white'
   end
 
   # GET /matches/1/edit
@@ -26,6 +24,7 @@ class MatchesController < ApplicationController
   # POST /matches.json
   def create
     @match = Match.new(match_params)
+
     flash[:notice] = "Match was created successfully." if @match.save
     respond_with @match
 
@@ -47,12 +46,18 @@ class MatchesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_league
+      @league = League.find(params[:league_id])
+    end
+
     def set_match
       @match = Match.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:kifu, :handicap, :winner, :victory_condition, :location_id, :league_id, :created_at, :updated_at, :black_player_id, :white_player_id)
+      params.require(:match).permit(:kifu, :handicap, :winner, :victory_condition, :location_id,
+        :league_id, :created_at, :updated_at, :black_participant, :white_participant,
+                                   match_participations_attributes: [:color, :participant_id])
     end
 end

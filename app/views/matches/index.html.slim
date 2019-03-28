@@ -24,12 +24,12 @@ table
         td = match.victory_condition
         td = match.location.name
         td = "#{match.league.edition}° #{match.league.name}"
-        td = match.black_player.name
-        td = match.white_player.name
+        /td = match.black_player.last_name
+        /td = match.white_player.last_name
         td = link_to 'Show', match
         td = link_to 'Edit', edit_match_path(match)
         td = link_to 'Destroy', match, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
-= link_to 'New Match', new_match_path
+= link_to 'New Match', new_league_match_path
