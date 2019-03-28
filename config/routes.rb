@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :players
   resources :leagues
   resources :locations
+
+  resources :home, only: [:index]
+
+  root to: 'home#index'
 end
