@@ -3,7 +3,7 @@ h1 Listing players
 table
   thead
     tr
-      th Name
+      th Jugador
       th Email
       th Rango
       th
@@ -13,7 +13,7 @@ table
   tbody
     - @players.each do |player|
       tr
-        td = player.name
+        td = player.full_name
         td = player.email
         td = player.rango
         td = link_to 'Show', player

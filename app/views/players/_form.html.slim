@@ -1,6 +1,7 @@
 = semantic_form_for @player do |f|
   = f.inputs do
-    = f.input :name
+    = f.input :first_name
+    = f.input :last_name
     = f.input :email
     = f.input :rango, as: :select, collection: PlayersHelper::DAN_RANKS.reverse + PlayersHelper::KYU_RANKS    
 

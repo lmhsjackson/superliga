@@ -26,10 +26,10 @@ p
   = @match.updated_at
 p
   strong Black player:
-  = @match.black_player_id
+  /= @match.black_player_id
 p
   strong White player:
-  = @match.white_player_id
+  /= @match.white_player_id
 
 => link_to 'Edit', edit_match_path(@match)
 '|
