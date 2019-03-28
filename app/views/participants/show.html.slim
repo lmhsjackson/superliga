@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @participant.full_name
+p
+  strong Rank:
+  = @participant.rank
+
+=> link_to 'Edit', edit_league_participant_path(@participant)
+'|
+=< link_to 'Back', participants_path
