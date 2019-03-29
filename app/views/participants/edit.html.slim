@@ -2,7 +2,7 @@ h1 Editing participant
 
 == render 'form'
 
-=> link_to 'Show', @participant
+=> link_to 'Show', league_participant_path(@league, @participant)
 '|
-=< link_to 'Back', participant_path
+=< link_to 'Back', league_participants_path
 

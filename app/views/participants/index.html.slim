@@ -12,11 +12,11 @@ table
   tbody
     - @participants.each do |participant|
       tr
-        td = participant.name
-        td = participant.address
-        td = link_to 'Show', participant
-        td = link_to 'Edit', edit_participant_path(participant)
-        td = link_to 'Destroy', participant, data: { confirm: 'Are you sure?' }, method: :delete
+        td = participant.full_name
+        td = participant.rank
+        td = link_to 'Show', league_participant_path(@league, participant)
+        td = link_to 'Edit', edit_league_participant_path(@league, participant)
+        td = link_to 'Destroy', league_participant_path(@league, participant), data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 

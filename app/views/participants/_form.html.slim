@@ -1,6 +1,8 @@
 = semantic_form_for [@league, @participant], :html => { :class => 'spaced_form' } do |f|
   = f.inputs do
-    = f.input :rank, as: :select, collection: PlayersHelper::DAN_RANKS.reverse + PlayersHelper::KYU_RANKS    
+
+    = f.input :player, as: :select, collection: Player.all
+    = f.input :rank, as: :select, collection: PlayersHelper::DAN_RANKS.reverse + PlayersHelper::KYU_RANKS
 
   = f.actions do
     = f.action :submit, as: :input
