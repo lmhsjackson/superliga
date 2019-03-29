@@ -26,9 +26,9 @@ table
         td = "#{match.league.edition}° #{match.league.name}"
         /td = match.black_player.last_name
         /td = match.white_player.last_name
-        td = link_to 'Show', match
-        td = link_to 'Edit', edit_match_path(match)
-        td = link_to 'Destroy', match, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', league_match_path(@league, match)
+        td = link_to 'Edit', edit_league_match_path(@league, match)
+        td = link_to 'Destroy', league_match_path(@league, match), data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
