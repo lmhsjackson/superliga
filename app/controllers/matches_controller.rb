@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
+  before_action :set_league
   def index
     @matches = Match.all
   end
@@ -17,16 +18,14 @@ class MatchesController < ApplicationController
   end
 
   # GET /matches/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /matches
   # POST /matches.json
   def create
-    @match = Match.new(match_params)
-
+    @match = @league.matches.new(match_params)
     flash[:notice] = "Match was created successfully." if @match.save
-    respond_with @match
+    respond_with(@league, @match)
 
   end
 
@@ -34,14 +33,14 @@ class MatchesController < ApplicationController
   # PATCH/PUT /matches/1.json
   def update
     flash[:notice] = "Match was created successfully." if @match.update(match_params)
-    respond_with(@match)
+    respond_with(@league, @match)
   end
 
   # DELETE /matches/1
   # DELETE /matches/1.json
   def destroy
     @match.destroy
-    respond_with @match
+    respond_with(@league, @match)
   end
 
   private
@@ -57,7 +56,7 @@ class MatchesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
       params.require(:match).permit(:kifu, :handicap, :winner, :victory_condition, :location_id,
-        :league_id, :created_at, :updated_at, :black_participant, :white_participant,
-                                   match_participations_attributes: [:color, :participant_id])
+                                    :league_id, :created_at, :updated_at, :black_participant, :white_participant,
+                                    match_participations_attributes: [:id, :color, :participant_id])
     end
 end

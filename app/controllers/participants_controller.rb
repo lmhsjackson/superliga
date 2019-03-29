@@ -39,8 +39,7 @@ class ParticipantsController < ApplicationController
   # DELETE /participants/1.json
   def destroy
    @participant.destroy
-   redirect_to league_participants_path(@league)
-    # respond_with(@league, @participant)
+   respond_with(@league, @participant)
   end
 
   private
