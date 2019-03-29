@@ -9,6 +9,6 @@ class Player < ApplicationRecord
   validates :rango, inclusion: { in: PlayersHelper::VALID_RANKS, message: "is not valid." }
 
   def full_name
-    first_name + ' ' + last_name
+    "#{first_name} #{last_name}"
   end
 end
