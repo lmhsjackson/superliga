@@ -5,7 +5,7 @@ table
     tr
       th Jugador
       th Email
-      th Rango
+      th Ranking
       th
       th
       th
@@ -15,7 +15,7 @@ table
       tr
         td = player.full_name
         td = player.email
-        td = player.rango
+        td = player.rank
         td = link_to 'Show', player
         td = link_to 'Edit', edit_player_path(player)
         td = link_to 'Destroy', player, data: { confirm: 'Are you sure?' }, method: :delete

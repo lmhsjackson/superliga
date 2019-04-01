@@ -5,9 +5,9 @@ RSpec.describe Participant, type: :model do
     it 'copies the players attributes' do
       player = build :player
       participant = Participant.new_from(player)
-      expect(participant.first_name).to eq(player.first_name)
-      expect(participant.last_name).to eq(player.last_name)
-      expect(participant.rank).to eq(player.rango)
+      [:first_name, :last_name, :rank].each do |attr|
+      expect(send(participant, :attr)).to eq(send(player, attr))
+      end
     end
 
     it 'initializes the score to 0' do

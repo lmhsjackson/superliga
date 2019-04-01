@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe PlayersController, type: :controller do
 
   let(:valid_attributes) {
-    {'first_name'=>'pipo', 'last_name' => 'chipolatti', 'email'=>'pipi@pipo.com', 'rango'=>'5K'}
+    {'first_name'=>'pipo', 'last_name' => 'chipolatti', 'email'=>'pipi@pipo.com', 'rank'=>'5K'}
   }
 
   let(:invalid_attributes) {
-    {'first_name'=>'pipo', 'email'=>'NOTaMAIL', 'rango'=>'5K'}
+    {'first_name'=>'pipo', 'email'=>'NOTaMAIL', 'rank'=>'5K'}
   }
 
   let(:valid_session) { {} }
