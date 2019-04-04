@@ -57,7 +57,7 @@ class MatchesController < ApplicationController
     def match_params
       params.require(:match)
         .permit(:kifu, :handicap, :winner, :victory_condition, :location_id,
-                :league_id, :created_at, :updated_at, :black_participant, :white_participant,
+                :league_id, :created_at, :updated_at,
                 match_participations_attributes: [:id, :color, :participant_id])
     end
 end
