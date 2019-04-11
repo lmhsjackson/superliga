@@ -5,11 +5,6 @@ RSpec.describe Match, type: :model do
   subject { build(:match) }
 
   describe 'AR record validations' do
-
-    before do
-      allow(subject).to receive(:participants).and_return(["fake", "participants"])
-    end
-
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
     end
@@ -27,19 +22,6 @@ RSpec.describe Match, type: :model do
 
     it 'is not valid without a league' do
       subject.league = nil
-      expect(subject).not_to be_valid
-    end
-  end
-
-  describe 'participants validations' do
-    it 'is not valid without 2 participants' do
-      subject.participants = []
-      expect(subject).not_to be_valid
-    end
-
-    it 'is not valid if white and black player are the same' do
-      participant = build :participant
-      subject.participants << [participant, participant]
       expect(subject).not_to be_valid
     end
   end
