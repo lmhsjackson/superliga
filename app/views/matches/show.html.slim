@@ -26,11 +26,11 @@ p
   = @match.updated_at
 p
   strong Black player:
-  = @match.black_player_id
+  = @match.black_participant.full_name
 p
   strong White player:
-  = @match.white_player_id
+  = @match.white_participant.full_name
 
-=> link_to 'Edit', edit_match_path(@match)
+=> link_to 'Edit', edit_league_match_path(@league, @match)
 '|
-=< link_to 'Back', matches_path
+=< link_to 'Back', league_matches_path

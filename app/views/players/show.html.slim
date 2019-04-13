@@ -2,13 +2,13 @@ p#notice = notice
 
 p
   strong Name:
-  = @player.name
+  = @player.full_name
 p
   strong Email:
   = @player.email
 p
-  strong Rango:
-  = @player.rango
+  strong Ranking:
+  = @player.rank
 
 => link_to 'Edit', edit_player_path(@player)
 '|

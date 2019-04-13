@@ -22,8 +22,8 @@ RSpec.describe Player, type: :model do
     expect(subject).not_to be_valid
   end
 
-  it 'is not valid without a correct rango' do
-    subject.rango = '14D'
+  it 'is not valid without a correct rank' do
+    subject.rank = '14D'
     expect(subject).not_to be_valid
   end
 end

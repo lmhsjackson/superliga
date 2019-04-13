@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :player do
-    name { 'Jose Piccioni' }
+    first_name { 'Jose' }
+    last_name { 'Piccioni' }
     sequence :email do |n|
       "player#{n}@example.com"
     end
-    rango { "3K" }
+    rank { "3K" }
   end
 end

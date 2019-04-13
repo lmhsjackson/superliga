@@ -2,7 +2,6 @@ h1 Editing match
 
 == render 'form'
 
-=> link_to 'Show', @match
+=> link_to 'Show', league_match_path(@league, @match)
 '|
-=< link_to 'Back', matches_path
-
+=< link_to 'Back', league_matches_path
