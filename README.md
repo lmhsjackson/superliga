@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/thisisnotanorganization/superliga.svg?branch=master)](https://travis-ci.org/thisisnotanorganization/superliga)
 # Superliga
 
-Superliga (spanish for superleague) it's an app to easily manage the   [Go](https://en.wikipedia.org/wiki/Go_(game)) monthly leagues, of the [Argentinian Go Association<F6>](http://aago.org.ar/)
+Superliga (spanish for superleague) it's an app to easily manage the   [Go](https://en.wikipedia.org/wiki/Go_(game)) monthly leagues, of the [Argentinian Go Association](http://aago.org.ar/)
 It is also intended as an opensource project anyone can contribute to.
 
 Why is it cool?
@@ -20,7 +20,7 @@ Some of the features for the first mvp are:
 * Upload game records (kifus).
 * Login/logout
 * Admin capabilities.
-
+ (wanna pick up some work? check the [To do file](todo))
 Things on the wishlist are:
 
 * Player profile: pics, statistics, rank history graph.
