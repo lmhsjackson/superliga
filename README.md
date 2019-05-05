@@ -3,16 +3,23 @@
 [![Build Status](https://travis-ci.org/thisisnotanorganization/superliga.svg?branch=master)](https://travis-ci.org/thisisnotanorganization/superliga)
 # Superliga
 
-Superliga (spanish for superleague) it's an app to easily manage the [AAGO](http://aago.org.ar/)  [Go](https://en.wikipedia.org/wiki/Go_(game)) monthly leagues.
+Superliga (spanish for superleague) it's an app to easily manage the   [Go](https://en.wikipedia.org/wiki/Go_(game)) monthly leagues, of the [Argentinian Go Association<F6>](http://aago.org.ar/)
 It is also intended as an opensource project anyone can contribute to.
+
+Why is it cool?
+  - The code is simple and readable.
+  - It was designed with coding quality standards and mantainability in mind.
+  - It uses tools like Simplecov, Travis, Codeclimate and Rubocop.
+  - It is deployed on AWS
 
 Some of the features for the first mvp are:
 
-* Enter a match result
-* See the league table
-* CRUD of matches/players/leagues
+* Enter a match result ✔
+* See the league table ✔
+* CRUD of matches/players/leagues ✔
 * Upload game records (kifus).
-* Login/logout and admin capabilities.
+* Login/logout
+* Admin capabilities.
 
 Things on the wishlist are:
 
