@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'leagues#index'
+
   resources :players
   resources :leagues do
     resources :matches
@@ -8,7 +10,5 @@ Rails.application.routes.draw do
 
   resources :locations
 
-  resources :home, only: [:index]
-
-  root to: 'home#index'
+  # resources :home, only: [:index]
 end
