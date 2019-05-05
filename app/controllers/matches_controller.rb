@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
   before_action :set_league
+
   def index
     @matches = Match.all
   end

@@ -15,7 +15,7 @@ class LeaguesController < ApplicationController
 
   # GET /leagues/new
   def new
-    @league = League.new
+    @league = League.new(start_date: Date.today, end_date: Date.today + 4.weeks)
   end
 
   # GET /leagues/1/edit
