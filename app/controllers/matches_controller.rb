@@ -26,7 +26,6 @@ class MatchesController < ApplicationController
     @match = @league.matches.new(match_params)
     flash[:notice] = "Match was created successfully." if @match.save
     respond_with(@league, @match)
-
   end
 
   # PATCH/PUT /matches/1

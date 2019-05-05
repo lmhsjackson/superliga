@@ -3,14 +3,14 @@ h1 Listing matches
 table
   thead
     tr
-      th Kifu
+      th Black player
+      th White player
       th Handicap
       th Winner
       th Victory condition
       th Location
+      th Kifu
       th League
-      th Black player
-      th White player
       th
       th
       th
@@ -18,14 +18,14 @@ table
   tbody
     - @matches.each do |match|
       tr
-        td = match.kifu
+        td = match.black_participant.full_name
+        td = match.white_participant.full_name
         td = match.handicap
         td = match.winner
         td = match.victory_condition
         td = match.location.name
+        td = match.kifu
         td = "#{match.league.edition}° #{match.league.name}"
-        /td = match.black_player.last_name
-        /td = match.white_player.last_name
         td = link_to 'Show', league_match_path(@league, match)
         td = link_to 'Edit', edit_league_match_path(@league, match)
         td = link_to 'Destroy', league_match_path(@league, match), data: { confirm: 'Are you sure?' }, method: :delete
