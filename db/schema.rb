@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_173129) do
+ActiveRecord::Schema.define(version: 2019_05_05_143225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_173129) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "color"
+    t.boolean "winner"
     t.index ["match_id"], name: "index_match_participations_on_match_id"
     t.index ["participant_id"], name: "index_match_participations_on_participant_id"
   end
@@ -45,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_04_14_173129) do
   create_table "matches", force: :cascade do |t|
     t.string "kifu"
     t.integer "handicap"
-    t.string "winner"
     t.string "victory_condition"
     t.bigint "location_id"
     t.bigint "league_id"

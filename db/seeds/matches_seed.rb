@@ -9,17 +9,18 @@ rivals_ids.each do |black_id, white_id|
   match_participations = MatchParticipation.create([
     {
       color:'black',
-      participant_id: black_id
+      participant_id: black_id,
+      winner: true
     },
     {
       color:'white',
-      participant_id: white_id
+      participant_id: white_id,
+      winner: false
     }
   ])
 
   Match.create(
     league: league,
-    winner: 'black',
     match_participations: match_participations,
     location: Location.first,
     victory_condition: 'resignation'

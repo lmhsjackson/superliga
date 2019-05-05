@@ -11,6 +11,10 @@ class Match < ApplicationRecord
 
   validates :victory_condition, inclusion: { in: VICTORY_CONDITIONS, message: "is not valid." }
 
+  def winner
+    match_participations.find_by(winner: true).participant
+  end
+
   def black_participant
     match_participations.find_by(color: 'black').participant
   end

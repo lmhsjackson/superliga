@@ -1,12 +1,13 @@
 = semantic_form_for [@league, @match], :html => { :class => 'spaced_form' } do |f|
   = f.inputs do
     = f.inputs :for => :match_participations do |fp, i|
-      = fp.input :color
+      = fp.input :color, as: :hidden
+      = "#{(fp.object.color || '').capitalize} player"
       = fp.input :participant, as: :select, collection: Participant.all.map { |p| [p.full_name, p.id] }
-    = f.input :winner, as: :select, collection: [ 'black', 'white' ]
+      = fp.input :winner
+    = f.input :location
     = f.input :victory_condition, as: :select, collection: Match::VICTORY_CONDITIONS
     = f.input :handicap
-    = f.input :location
     = f.input :kifu
 
   = f.actions do
