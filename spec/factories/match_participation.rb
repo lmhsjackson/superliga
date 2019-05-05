@@ -10,7 +10,7 @@ FactoryBot.define do
     color { 'white' }
   end
 
-  trait :winner do
+  trait :won do
     winner { true }
   end
 end

@@ -5,6 +5,7 @@ table
     tr
       th Full Name
       th Rank
+      th Score
       th
       th
       th
@@ -14,6 +15,7 @@ table
       tr
         td = participant.full_name
         td = participant.rank
+        td = participant.score
         td = link_to 'Show', league_participant_path(@league, participant)
         td = link_to 'Edit', edit_league_participant_path(@league, participant)
         td = link_to 'Destroy', league_participant_path(@league, participant), data: { confirm: 'Are you sure?' }, method: :delete

@@ -5,7 +5,7 @@ class ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.all
+    @participants = Participant.order(score: :desc, rank: :desc)
   end
 
   # GET /participants/1
