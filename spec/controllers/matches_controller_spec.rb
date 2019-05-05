@@ -9,15 +9,15 @@ RSpec.describe MatchesController, type: :controller do
 
   let(:valid_attributes) {
     {
-      'handicap' => '4', 'winner' => 'black', 'victory_condition' => 'resignation',
+      'handicap' => '4', 'victory_condition' => 'resignation',
       'location_id' => location.id.to_s, 'league_id' => league.id.to_s,
-      'match_participations_attributes' => [{ 'color' => 'black', 'participant_id'=> black_player.id.to_s},
-                                            { 'color' => 'white', 'participant_id'=> white_player.id.to_s}]
+      'match_participations_attributes' => [{ 'color' => 'black', winner: 'true', 'participant_id'=> black_player.id.to_s},
+                                            { 'color' => 'white', winner: 'false', 'participant_id'=> white_player.id.to_s}]
     }
   }
 
   let(:invalid_attributes) {
-    { 'handicap' => '4', 'winner' => 'black', 'victory_condition' => 'resignation',
+    { 'handicap' => '4', 'victory_condition' => 'resignation',
       'location_id' => nil, 'league_id' => league.id.to_s }
   }
 
