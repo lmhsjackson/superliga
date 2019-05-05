@@ -6,4 +6,8 @@ class League < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   delegate :full_name, to: :director, prefix: true
+
+  def active?
+    (start_date..end_date).include? Date.today
+  end
 end
