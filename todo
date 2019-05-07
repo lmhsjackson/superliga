@@ -1,5 +1,4 @@
 Frontend validations:
-- 2 players cant be winners or losers of a game
 - A player cant play with itself
 
 Backend validations

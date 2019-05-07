@@ -4,7 +4,7 @@
       = fp.input :color, as: :hidden
       = "#{(fp.object.color || '').capitalize} player"
       = fp.input :participant, as: :select, collection: Participant.all.map { |p| [p.full_name, p.id] }
-      = fp.input :winner
+      = fp.input :winner, id: :winner
     = f.input :location
     = f.input :victory_condition, as: :select, collection: Match::VICTORY_CONDITIONS
     = f.input :handicap
