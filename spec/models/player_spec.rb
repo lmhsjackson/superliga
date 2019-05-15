@@ -26,4 +26,12 @@ RSpec.describe Player, type: :model do
     subject.rank = '14D'
     expect(subject).not_to be_valid
   end
+
+  describe '#full_name' do
+    it 'combines first and last name' do
+      subject.first_name = 'Phil'
+      subject.last_name = 'Collins'
+      expect(subject.full_name).to eq('Phil Collins')
+    end
+  end
 end

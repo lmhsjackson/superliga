@@ -6,4 +6,11 @@ FactoryBot.define do
     association :location
     association :league
   end
+
+  trait :with_participants do
+    after(:create) do |match, _evaluator|
+      match.match_participations << create(:match_participation)
+      match.match_participations << create(:match_participation, :white, :won)
+    end
+  end
 end
