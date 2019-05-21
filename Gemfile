@@ -48,8 +48,6 @@ gem 'slim-rails'
 # Simple css to get started
 gem 'skins'
 
-gem 'simplecov', require: false, group: :test
-gem 'simplecov-rcov', require: false, group: :test
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,6 +66,10 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
