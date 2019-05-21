@@ -22,7 +22,7 @@ table
         td = league.start_date
         td = league.end_date
         td = league.director_full_name
-        td = link_to 'Participants', league_participants_url(league)
+        td = link_to "#{league.participants.count}", league_participants_url(league)
         td = link_to 'Matches', league_matches_url(league)
         td = link_to 'Show', league
         td = link_to 'Edit', edit_league_path(league)
