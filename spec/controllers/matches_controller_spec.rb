@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe MatchesController, type: :controller do
-
-  let(:white_player) { create :participant }
-  let(:black_player) { create :participant }
+  let(:white_participant) { create :participant }
+  let(:black_participant) { create :participant }
   let(:league) { create :league }
   let(:location) { create :location }
 
@@ -11,8 +10,8 @@ RSpec.describe MatchesController, type: :controller do
     {
       'handicap' => '4', 'victory_condition' => 'resignation',
       'location_id' => location.id.to_s, 'league_id' => league.id.to_s,
-      'match_participations_attributes' => [{ 'color' => 'black', winner: 'true', 'participant_id'=> black_player.id.to_s},
-                                            { 'color' => 'white', winner: 'false', 'participant_id'=> white_player.id.to_s}]
+      'match_participations_attributes' => [{ 'color' => 'black', winner: 'true', 'participant_id'=> black_participant.id.to_s},
+                                            { 'color' => 'white', winner: 'false', 'participant_id'=> white_participant.id.to_s}]
     }
   }
 
