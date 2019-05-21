@@ -5,6 +5,7 @@ class Participant < ApplicationRecord
   has_many :matches, through: :match_participations
   delegate :first_name, :last_name, :full_name, to: :player
   validates_presence_of :score
+  validates :rank, inclusion: { in: PlayersHelper::VALID_RANKS, message: "is not valid." }
   validates :player_id, uniqueness: { scope: :league_id,
                                       message: 'Already exist in this league.' }
 
