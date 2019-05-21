@@ -31,7 +31,7 @@ class ParticipantsController < ApplicationController
   # PATCH/PUT /participants/1
   # PATCH/PUT /participants/1.json
   def update
-    flash[:notice] = 'Participant was created successfully.' if @participant.update(participant_params)
+    flash[:notice] = 'Participant was updated successfully.' if @participant.update(participant_params)
     respond_with(@league, @participant)
   end
 
