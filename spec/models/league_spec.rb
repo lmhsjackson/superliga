@@ -28,10 +28,4 @@ RSpec.describe League, type: :model do
       expect(subject).not_to be_valid
     end
   end
-
-  def match_with_players
-    build(:match,
-          white_player: build(:player),
-          black_player: build(:player))
-  end
 end
