@@ -1,4 +1,4 @@
-h1 Listing matches
+h1 = "Listing #{LeaguesHelper.full_name(@league)} matches"
 
 = link_to 'New Match', new_league_match_path
 table
@@ -11,7 +11,6 @@ table
       th Victory condition
       th Location
       th Kifu
-      th League
       th
       th
       th
@@ -26,7 +25,6 @@ table
         td = match.victory_condition
         td = match.location.name
         td = kifu_linker(match.kifu)
-        td = "#{match.league.edition}° #{match.league.name}"
         td = link_to 'Show', league_match_path(@league, match)
         td = link_to 'Edit', edit_league_match_path(@league, match)
         td = link_to 'Destroy', league_match_path(@league, match), data: { confirm: 'Are you sure?' }, method: :delete
